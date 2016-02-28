@@ -1,0 +1,25 @@
+package buttons;
+
+import lightbulbs.Lightbulb;
+
+public class PushdownButton {
+	
+	private Lightbulb lbulb = new Lightbulb();
+	private boolean Lflag = false;
+	public void PushButton()
+	{
+		if(!Lflag)
+		{
+			System.out.println("Buttton toggled");
+			lbulb.on();
+			Lflag = true;
+		}
+		else
+		{
+			System.out.println("Buttton toggled");
+			lbulb.off();
+			Lflag = false;
+		}
+	}
+
+}
