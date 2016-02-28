@@ -11,6 +11,7 @@ change terminal directory to that of the folder TableLamp in the home directory 
 run command: make
 The make file will be executed and the class files will be created.
 
+To execute:
 To run main program, run this command: java -cp bin/ tablelamp.Main
 
 To run the test suite: 

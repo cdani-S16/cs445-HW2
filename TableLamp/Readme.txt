@@ -18,15 +18,4 @@ To run the test suite:
 java -cp "bin/:bin/junit-4.8.1.jar" org.junit.runner.JUnitCore  tablelamp.Testsuite
 
 
-buttons LOc: 44
-cyc: 2
-
-lightbulb: 11
-cylcomatic : 1
-
-tabl LOC: 119
-cycl: 1
-
-tab (no test code) LOC: 13
-cycl 1
 
