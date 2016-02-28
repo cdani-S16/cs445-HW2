@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+
 import buttons.Button;
+import lightbulbs.Lightbulb;
 
 public class Testbuttons
 {
@@ -19,6 +21,9 @@ public class Testbuttons
 	    System.setErr(new PrintStream(errorContent));
 	}
 
+	@Before
+	Lightbulb lb = new Lightbulb();
+
 	@After
 	public void cleanUpStreams() {
 	    System.setOut(null);
@@ -29,12 +34,12 @@ public class Testbuttons
 	@Test
 	public void test()
 	{
-		Button btn = new Button();
-		btn.PushButton();
-		btn.PushButton();
+		Button btn = new Button(lb);
+		btn.switchOn();
+		btn.switchOff();
 		
 		
-		assertEquals("Button toggled\nLightbulb on\nButton toggled\nLightbulb off\n".trim(),outputContent.toString().trim());
+		assertEquals("Button switched to ON\nLightbulb on\nButton switched to OFF\nLightbulb off".trim(),outputContent.toString().trim());
 		
 	}
 }

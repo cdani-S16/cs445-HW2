@@ -1,6 +1,6 @@
 JCC = javac
 
-default: Lightbulb.class ILightBulb.class Button.class PushdownButton.class Testbuttons.class Testlightbulb.class Testpushdownbuttons.class Testsuite.class Main.class
+default: ILightbulb.class Lightbulb.class Button.class PushdownButton.class Testbuttons.class Testlightbulb.class Testpushdownbuttons.class Testsuite.class Main.class
 
 #classpath
 JCLASS = -cp
@@ -16,12 +16,11 @@ JDESTPATH = bin/
 
 SRCPATH = src
 
+ILightbulb.class: $(SRCPATH)/lightbulbs/ILightbulb.java
+	$(JCC) $(JCLASS) $(JCLASSPATH) $(JPATH) $(JDESTPATH) $(SRCPATH)/lightbulbs/ILightbulb.java
 
 Lightbulb.class: $(SRCPATH)/lightbulbs/Lightbulb.java
 	$(JCC) $(JCLASS) $(JCLASSPATH) $(JPATH) $(JDESTPATH) $(SRCPATH)/lightbulbs/Lightbulb.java
-
-ILightBulb.class: $(SRCPATH)/buttons/ILightBulb.java
-	$(JCC) $(JCLASS) $(JCLASSPATH) $(JPATH) $(JDESTPATH) $(SRCPATH)/buttons/ILightBulb.java
 
 Button.class: $(SRCPATH)/buttons/Button.java
 	$(JCC) $(JCLASS) $(JCLASSPATH) $(JPATH) $(JDESTPATH) $(SRCPATH)/buttons/Button.java

@@ -1,5 +1,5 @@
 package lightbulbs;
-
+import lightbulbs.ILightbulb;
 
 public class Lightbulb implements ILightbulb{
 

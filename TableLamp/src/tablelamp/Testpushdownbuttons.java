@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import buttons.PushdownButton;
+import lightbulbs.Lightbulb;
 
 public class Testpushdownbuttons
 {
@@ -18,6 +19,7 @@ public class Testpushdownbuttons
 	    System.setOut(new PrintStream(outputContent));
 	    System.setErr(new PrintStream(errorContent));
 	}
+	
 
 	@After
 	public void cleanUpStreams() {
@@ -29,7 +31,8 @@ public class Testpushdownbuttons
 	@Test
 	public void test()
 	{
-		PushdownButton pdbtn = new PushdownButton();
+		Lightbulb lb = new Lightbulb();
+		PushdownButton pdbtn = new PushdownButton(lb);
 		pdbtn.PushButton();
 		pdbtn.PushButton();
 		pdbtn.PushButton();
