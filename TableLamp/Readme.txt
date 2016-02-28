@@ -1,15 +1,21 @@
+Instructions:
 
-make
+To get a copy of the project:
+open terminal (make sure git is installed)
+run this command: git clone https://github.com/cdani-S16/cs445-HW2.git
+a local copy will be created
 
-javac -cp "bin/:bin/junit-4.8.1.jar" -d bin/ src/tablelamp/Testbuttons.java
+To compile:
+Make sure openjdk is installed
+change terminal directory to that of the folder TableLamp in the home directory where the clone is saved in 
+run command: make
+The make file will be executed and the class files will be created.
 
-java -cp "bin/:bin/junit-4.8.1.jar" org.junit.runner.JUnitCore  tablelamp.Testbuttons
+To execute:
+To run main program, run this command: java -cp bin/ tablelamp.Main
 
-java -cp bin/ tablelamp.Main
-
-codecover/codecover.sh instrument --root-directory ../SimpleJavaApp/src                     --destination ../SimpleJavaApp/instrumentedSrc                      --container ../SimpleJavaApp/test-session-container.xml                     --language java                      --charset UTF-8
-
-codecover/codecover.sh analyze --container ../SimpleJavaApp/test-session-container.xml                   --coverage-log ../SimpleJavaApp/instrumentedSrc/coverage_log.clf                   --name TestSession1                   --comment "The first test session"
+To run the test suite: 
+java -cp "bin/:bin/junit-4.8.1.jar" org.junit.runner.JUnitCore  tablelamp.Testsuite
 
 
 buttons LOc: 44

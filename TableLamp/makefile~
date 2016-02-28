@@ -1,11 +1,13 @@
 JCC = javac
 
-default: Lightbulb.class ILightBulb.class Button.class PushdownButton.class Main.class
+default: Lightbulb.class ILightBulb.class Button.class PushdownButton.class Testbuttons.class Testlightbulb.class Testpushdownbuttons.class Testsuite.class Main.class
 
 #classpath
 JCLASS = -cp
 
 JCLASSPATH = bin/
+
+JCLASSPATHJUNIT = bin/junit-4.8.1.jar
 
 #dest class path
 JPATH = -d
@@ -14,7 +16,6 @@ JDESTPATH = bin/
 
 SRCPATH = src
 
-default: Lightbulb.class ILightBulb.class Button.class PushdownButon.class Main.class
 
 Lightbulb.class: $(SRCPATH)/lightbulbs/Lightbulb.java
 	$(JCC) $(JCLASS) $(JCLASSPATH) $(JPATH) $(JDESTPATH) $(SRCPATH)/lightbulbs/Lightbulb.java
@@ -30,6 +31,18 @@ PushdownButton.class: $(SRCPATH)/buttons/PushdownButton.java
 
 Main.class: $(SRCPATH)/tablelamp/Main.java
 	$(JCC) $(JCLASS) $(JCLASSPATH) $(JPATH) $(JDESTPATH) $(SRCPATH)/tablelamp/Main.java
+
+Testbuttons.class: $(SRCPATH)/tablelamp/Testbuttons.java
+	$(JCC) $(JCLASS) "$(JCLASSPATH):$(JCLASSPATHJUNIT)" $(JPATH) $(JDESTPATH) $(SRCPATH)/tablelamp/Testbuttons.java
+
+Testlightbulb.class: $(SRCPATH)/tablelamp/Testlightbulb.java
+	$(JCC) $(JCLASS) "$(JCLASSPATH):$(JCLASSPATHJUNIT)" $(JPATH) $(JDESTPATH) $(SRCPATH)/tablelamp/Testlightbulb.java
+
+Testpushdownbuttons.class: $(SRCPATH)/tablelamp/Testpushdownbuttons.java
+	$(JCC) $(JCLASS) "$(JCLASSPATH):$(JCLASSPATHJUNIT)" $(JPATH) $(JDESTPATH) $(SRCPATH)/tablelamp/Testpushdownbuttons.java
+
+TestSuite.class: $(SRCPATH)/tablelamp/TestSuite.java
+	$(JCC) $(JCLASS) "$(JCLASSPATH):$(JCLASSPATHJUNIT)" $(JPATH) $(JDESTPATH) $(SRCPATH)/tablelamp/TestSuite.java
 
 clean: 
 	$(RM) *.class
